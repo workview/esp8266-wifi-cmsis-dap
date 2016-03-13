@@ -17,7 +17,7 @@
 #define GPIO_H
 
 void gpio_init(void);
-void gpio_enable_button_flag(OS_TID task, uint16_t flag);
+void gpio_enable_button_flag(int task, uint16_t flag);
 void gpio_set_dap_led(uint8_t state);
 void gpio_set_cdc_led(uint8_t state);
 void gpio_set_msd_led(uint8_t state);

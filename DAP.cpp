@@ -135,20 +135,21 @@ static uint8_t DAP_Info(uint8_t id, uint8_t *info) {
 
 // Start Timer
 static __inline void TIMER_START (uint32_t usec) {
-  SysTick->VAL  = 0;
-  SysTick->LOAD = usec * CPU_CLOCK/1000000;
-  SysTick->CTRL = (1 << SysTick_CTRL_ENABLE_Pos) |
-                  (1 << SysTick_CTRL_CLKSOURCE_Pos);
+  //TODO
+//  SysTick->VAL  = 0;
+//  SysTick->LOAD = usec * CPU_CLOCK/1000000;
+//  SysTick->CTRL = (1 << SysTick_CTRL_ENABLE_Pos) |
+//                  (1 << SysTick_CTRL_CLKSOURCE_Pos);
 }
 
 // Stop Timer
 static __inline void TIMER_STOP (void) {
-  SysTick->CTRL = 0;
+//TODO  SysTick->CTRL = 0;
 }
 
 // Check if Timer expired
 static __inline uint32_t TIMER_EXPIRED (void) {
-  return ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) ? 1 : 0);
+return 0; //TODO  return ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) ? 1 : 0);
 }
 
 #endif
@@ -734,10 +735,10 @@ static uint32_t DAP_SWD_Transfer(uint8_t *request, uint8_t *response) {
         post_read = 0;
       }
       // Load data
-      data = (*(request+0) <<  0) |
-             (*(request+1) <<  8) |
-             (*(request+2) << 16) |
-             (*(request+3) << 24);
+      data = (((uint32_t)*(request+0)) <<  0) |
+             (((uint32_t)*(request+1)) <<  8) |
+             (((uint32_t)*(request+2)) << 16) |
+             (((uint32_t)*(request+3)) << 24);
       request += 4;
       if (request_value & DAP_TRANSFER_MATCH_MASK) {
         // Write match mask

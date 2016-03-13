@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <RTL.h>
+//#include <RTL.h>
 #include <stdint.h>
 #include <string.h>
 
-#include "rl_usb.h"
-#include "version.h"
+//#include "rl_usb.h"
+// #include "version.h"
 #include "DAP_config.h"
 #include "uart.h"
 #include "DAP.h"
@@ -29,21 +29,20 @@
 //   response: pointer to response data
 //   return:   number of bytes in response
 // this function is declared as __weak in DAP.c
-uint32_t DAP_ProcessVendorCommand(uint8_t *request, uint8_t *response) {
-
-    // get unique ID command
-    if (*request == ID_DAP_Vendor0) {
-        uint8_t * id_str = get_uid_string();
-        uint8_t len = strlen((const char *)(id_str + 4));
-        *response = ID_DAP_Vendor0;
-        *(response + 1) = len;
-        memcpy(response + 2, id_str + 4, len);
-        return (len + 2);
-    }
-
-    // else return invalid command
-    else {
-        *response = ID_DAP_Invalid;
-    }
-    return (1);
-}
+//uint32_t DAP_ProcessVendorCommand(uint8_t *request, uint8_t *response) {
+//
+//    // get unique ID command
+//    if (*request == ID_DAP_Vendor0) {
+//#define FOO "I have no idea what I'm doing"
+//        *response++ = ID_DAP_Vendor0;
+//        *response++ = strlen(FOO);
+//        strcpy((char *)response, FOO);
+//        return (strlen(FOO) + 2);
+//    }
+//
+//    // else return invalid command
+//    else {
+//        *response = ID_DAP_Invalid;
+//    }
+//    return (1);
+//}

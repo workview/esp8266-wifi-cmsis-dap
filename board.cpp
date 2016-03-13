@@ -94,6 +94,10 @@
 #define BOARD_ID        "1062"
 #define BOARD_SECRET    "xxxxxxxx"
 
+#elif defined(ARDUINO_AVR_MICRO) || defined(TEENSYDUINO)
+#define BOARD_ID        {1, 1, 1, 1}
+#define BOARD_SECRET    {1, 1, 1, 1, 1, 1, 1, 1, 1}
+
 #endif
 
 #if !defined(BOARD_SECRET) || !defined(BOARD_ID)
@@ -107,5 +111,5 @@ BOARD board = {
 };
 
 /* Weak declaration of the board_init function for boards that don't use it */
-__weak void board_init(void) {
+void board_init(void) {
 }
