@@ -32,10 +32,10 @@ and also with OpenOCD to program and debug various chips using JTAG.
 example of flashing stm32f103 on arch linux
 
 Using Arduino IDE:
-change SSID and WiFi password in .ino file
-compile and upload it to esp8266
+- change SSID and WiFi password in .ino file
+- compile and upload it to esp8266
 
-connect target swd device to your esp8266 (check the pinout in .ino file)
+connect target device to your esp8266 via swd (check the pinout in .ino file)
 
 attach usb/ip device:
 ```
@@ -49,13 +49,13 @@ start openocd:
 sudo openocd -f /usr/share/openocd/scripts/interface/cmsis-dap.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg
 ```
 
-```
 connect to openocd telnet interface from another terminal:
 ```
 telnet localhost 4444
 ```
 
 execute openocd commands:
+
 (may require to push the RST button on target for it to work)
 ```
 reset halt
