@@ -1,11 +1,11 @@
 #include <Arduino.h>
-#ifdef TEENSYDUINO
-#define TEENSY_RAWHID
-#include "usb_desc.h"
-#else
-#define HIDPROJECT_RAWHID
-#include "HID-Project.h"
-#endif
+//#ifdef TEENSYDUINO
+//#define TEENSY_RAWHID
+//#include "usb_desc.h"
+//#else
+//#define HIDPROJECT_RAWHID
+//#include "HID-Project.h"
+//#endif
 
 /* CMSIS-DAP ported to run on the Arduino Micro
  * Copyright (C) 2016 Phillip Pearson <pp@myelin.co.nz>
@@ -36,8 +36,8 @@
 #define U64 uint64_t
 #define os_dly_wait delayMicroseconds
 
-#define DAP_VENDOR "Myelin"
-#define DAP_PRODUCT "Arduino CMSIS-DAP"
+#define DAP_VENDOR "thevoidnn"
+#define DAP_PRODUCT "esp8266 CMSIS-DAP"
 #define DAP_SER_NUM "1234"
 
 //**************************************************************************************************
@@ -90,7 +90,7 @@ Provides definitions about:
 /// Maximum Package Size for Command and Response data.
 /// This configuration settings is used to optimized the communication performance with the
 /// debugger and depends on the USB peripheral. Change setting to 1024 for High-Speed USB.
-#define DAP_PACKET_SIZE         RAWHID_RX_SIZE              ///< USB: 64 = Full-Speed, 1024 = High-Speed.
+#define DAP_PACKET_SIZE         64              ///< USB: 64 = Full-Speed, 1024 = High-Speed.
 
 /// Maximum Package Buffers for Command and Response data.
 /// This configuration settings is used to optimized the communication performance with the
@@ -125,12 +125,14 @@ Provides definitions about:
 #define PIN_LED_RUNNING LED_BUILTIN
 #else
 #define PIN_SWDIO 2
-#define PIN_SWCLK 3
+#define PIN_SWCLK 0 //3
 #define PIN_TDO 4
 #define PIN_TDI 5
-#define PIN_nRESET 6
-#define PIN_LED_CONNECTED LED_BUILTIN_TX
-#define PIN_LED_RUNNING LED_BUILTIN_RX
+#define PIN_nRESET 16
+// LED_BUILTIN
+#define PIN_LED_CONNECTED 13
+// LED_BUILTIN
+#define PIN_LED_RUNNING 15
 #endif
 
 

@@ -18,10 +18,10 @@
 #include <string.h>
 
 //#include "rl_usb.h"
-// #include "version.h"
-#include "DAP_config.h"
-#include "uart.h"
-#include "DAP.h"
+//#include "version.h"
+//#include "DAP_config.h"
+//#include "uart.h"
+//#include "DAP.h"
 
 // Process DAP Vendor command and prepare response
 // Default function (can be overridden)
