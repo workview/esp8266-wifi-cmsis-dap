@@ -7,9 +7,9 @@ Copyright (C) 2017 Oleg Suchilov
 based on <a href="https://github.com/myelin/arduino-cmsis-dap">CMSIS-DAP USB-SWD/JTAG adapter firmware for Pro Micro and Teensy 3.2 boards</a>
 
 credits to:
-https://github.com/devanlai/dap42 for HID descriptor config
-https://github.com/lcgamboa/USBIP-Virtual-USB-Device for simple USB/IP implementation details
-https://github.com/torvalds/linux/tree/master/tools/usb/usbip USB/IP stack authors
+- https://github.com/devanlai/dap42 for HID descriptor config
+- https://github.com/lcgamboa/USBIP-Virtual-USB-Device for simple USB/IP implementation details
+- https://github.com/torvalds/linux/tree/master/tools/usb/usbip USB/IP stack authors
 
 
 Copyright (C) 2016 Phillip Pearson <pp@myelin.co.nz>
